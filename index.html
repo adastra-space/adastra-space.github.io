@@ -29,18 +29,20 @@
         }
         
         #animateLine {
-          width: 200px;
-          height: 2px;
+          width: 300px;
+          height: 1px;
           background: linear-gradient(to right, rgba(255, 182, 193, 0), #FF69B4, #FFA07A, #FFDAB9, #FFEFD5);
           position: absolute;
-          top: 55%;
-          animation: moveLine 4s linear infinite;
+          top: 60%;
+          animation: moveLine 5s linear infinite;
         }
-        
+
         @keyframes moveLine {
-          0%   {left: 0px;}
-          100% {left: calc(100% - 200px);}
+          0%, 100% {left: -300px;}   /* Line starts outside of screen */
+          80%      {left: 100%;}     /* Line leaves the screen */
+          100%    {left: 100%;}   /* Line starts outside of screen */
         }
+            
         </style>
     </head>
     <body>
