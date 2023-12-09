@@ -6,20 +6,45 @@
         <title>AdAstra Space</title>
         <link rel="icon" href="favicon.png">
         <style>
-            body, html {
-              height: 100%;
-              margin: 0;
-            }
-            .bg-image {
-              background-image: url("comingsoon.png");
-              height: 100%;
-              background-position: center;
-              background-repeat: no-repeat;
-              background-size: cover;
-            }
-          </style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        
+        body {
+          background-color: #05051D; /* Very dark midnight blue */
+          color: white;
+          font-family: 'Orbitron', sans-serif; /* Futuristic, robotic font */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+        
+        #comingSoonText {
+          font-size: 4em;
+          background: -webkit-linear-gradient(left, #FF69B4, #FFA07A, #FFDAB9, #FFEFD5);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          position: absolute;
+          text-align: center;
+        }
+        
+        #animateLine {
+          width: 200px;
+          height: 2px;
+          background: linear-gradient(to right, rgba(255, 182, 193, 0), #FF69B4, #FFA07A, #FFDAB9, #FFEFD5);
+          position: absolute;
+          top: 55%;
+          animation: moveLine 4s linear infinite;
+        }
+        
+        @keyframes moveLine {
+          0%   {left: 0px;}
+          100% {left: calc(100% - 200px);}
+        }
+        </style>
     </head>
     <body>
-        <div class="bg-image"></div>
+    <div id="comingSoonText">Coming Soon...</div>
+    <div id="animateLine"></div>
     </body>
 </html>
